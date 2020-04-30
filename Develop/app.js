@@ -31,13 +31,13 @@ const employeeQuestions = [
     message: "What is the email of employee ?",
   }
 ]
-// object for Manager Questions 
+// object for Manager Question
 const managerQuestion = {
     type: "number",
     name: "officeNumber",
     message: "What is office number ?"
 }
-
+// object for employee  Question
 const employeeTypeQuestion = {
     type: "list",
     name: "option",
@@ -48,19 +48,19 @@ const employeeTypeQuestion = {
         "Exit"
     ]
 }
-
+ // object for engineer question 
 const engineerQuestion = {
     type: "input",
     name:  "github",
     message: "What is your gitHub profile ?"
 }
-
+// object for intern question 
 const internQuestion = {
     type: "input",
     name:  "school",
     message: "What is name of school ?"
 }
-
+// creating a function for manager data 
 function init() {
     inquirer 
         .prompt([...employeeQuestions, managerQuestion])
@@ -122,20 +122,6 @@ function createIntern() {
 
 
 init();
-/* 
-    Ask Manager Information
-        then create Manager
-        CreateEmployees() => Asks what tipe of employee (Engineer, Intern or Exit)
-            switch(answer.tipe)
-            Case (Engineer)
-                CreateEngineer()
-                CreateEmployees()
-            Case (Intern)
-                CreateIntern()
-                CreateEmployees()
-            Default
-                Exit
-*/
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
