@@ -9,34 +9,57 @@ const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
+ // create employee array which hold all employess
 
 const employees = [];
+// array of object employee questions
 
 const employeeQuestions = [
   {
     type: "input",
     name: "name",
-    message: "what is name of employee ?",
+    message: "What is name of employee ?",
   },
   {
     type: "number",
     name: "id",
-    message: "what is the id of employee ?",
+    message: "What is the id of employee ?",
   },
   {
     type: "input",
     name: "email",
-    message: "what is the  of employee ?",
+    message: "What is the email of employee ?",
   }
 ]
-
+// object for Manager Questions 
 const managerQuestion = {
     type: "number",
     name: "officeNumber",
-    message: "waht is office number ?"
+    message: "What is office number ?"
 }
 
+const employeeTypeQuestion = {
+    type: "list",
+    name: "option",
+    message: "What do you want to do ?",
+    choices: [
+        "Add a new Engineer",
+        "Add a new Intern",
+        "Exit"
+    ]
+}
 
+const engineerQuestion = {
+    type: "input",
+    name:  "github",
+    message: "What is your gitHub profile ?"
+}
+
+const internQuestion = {
+    type: "input",
+    name:  "school",
+    message: "What is name of school ?"
+}
 
 function init() {
     inquirer 
@@ -50,11 +73,53 @@ function init() {
 
 function createEmployees(){
     inquirer 
-        .prompt([...employeeQuestions, managerQuestion])
-        .then((answers)=>{
-            //switch
+        .prompt(employeeTypeQuestion)
+        .then((answer)=>{
+            //switch 
+            switch (answer.option){
+                case "Add a new Engineer":
+                    createEngineer();
+                    break;
+                case "Add a new Intern":
+                    createIntern();
+                    break;
+                default:
+                    generateHtml(employees);  
+            }      
         })
 }
+
+function generateHtml(employees){
+    const html = render(employees);
+
+    if (!fs.existsSync(OUTPUT_DIR)){
+        fs.mkdirSync(OUTPUT_DIR);
+    }
+
+    fs.writeFileSync(outputPath, html, "utf-8");
+}
+
+function createEngineer() {
+    inquirer 
+        .prompt([...employeeQuestions, engineerQuestion])
+        .then((answers)=>{
+            const engineer = new Engineer(answers.name, answers.id, answers.email, answers.github);
+            employees.push(engineer);
+            createEmployees();
+        })
+}
+
+
+function createIntern() {
+    inquirer 
+        .prompt([...employeeQuestions, internQuestion])
+        .then((answers)=>{
+            const intern = new Intern(answers.name, answers.id, answers.email, answers.school);
+            employees.push(intern);
+            createEmployees();
+        })
+}
+
 
 init();
 /* 
