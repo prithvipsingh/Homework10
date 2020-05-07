@@ -21,11 +21,13 @@ How do I deliver this? Here are some guidelines:
 
 * My app will run as a Node CLI to gather information about each employee.
 
-* Below is an example my application look like. 
+* The following image demonstrates the application functionality:
+
+![MyTeam demo](./Assets/MyTeam.png)
 
   ![MyTeam](./Assets/My Team.png)
 
-  ![TeamProfile](./Assets/Team Profile.png)
+  ![TeamProfile](./Assets/TeamProfile.png)
 
 In the `Develop` folder, there is a `package.json`, so make sure to `npm install`.
 
