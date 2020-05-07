@@ -25,9 +25,7 @@ How do I deliver this? Here are some guidelines:
 
 ![MyTeam demo](./Assets/MyTeam.png)
 
-  ![MyTeam](./Assets/My Team.png)
-
-  ![TeamProfile](./Assets/TeamProfile.png)
+![TeamProfile dem0](./Assets/TeamProfile.png)
 
 In the `Develop` folder, there is a `package.json`, so make sure to `npm install`.
 
