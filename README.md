@@ -22,8 +22,8 @@ How do you deliver this? Here are some guidelines:
 
 * Below is an example my application look like. 
 
-![My Team](./Assets/My Team.png)
-![Team Profile](./Assets/Team Profile.png)
+  ![MyTeam](/Assets/My Team.png)
+  ![TeamProfile](/Assets/Team Profile.png)
 
 In the `Develop` folder, there is a `package.json`, so make sure to `npm install`.
 
