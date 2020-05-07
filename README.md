@@ -20,10 +20,10 @@ How do you deliver this? Here are some guidelines:
 
 * Your app will run as a Node CLI to gather information about each employee.
 
-* Below is an example of what your application may look like. Remember, the styling is completely up to you so try to make it unique.
+* Below is an example my application look like. 
 
-![Employee Summary 1](./Assets/Screen Shot 2020-04-30 at 9.23.18 pm.png)
-![Employee Summary 2](./Assets/Screen Shot 2020-04-30 at 10.07.52 pm.png)
+! [Employee Summary 1](./Assets/My Team.png)
+! [Employee Summary 2](./Assets/Screen Shot 2020-04-30 at 10.07.52 pm.png)
 
 In the `Develop` folder, there is a `package.json`, so make sure to `npm install`.
 
@@ -31,7 +31,7 @@ The dependencies are, [jest](https://jestjs.io/) for running the provided tests,
 
 There are also unit tests to help you build the classes necessary.
 
-It is recommended that you follow this workflow:
+I have used following work flow 
 
 1. Run tests
 2. Create or update classes to pass a single test case
@@ -39,7 +39,7 @@ It is recommended that you follow this workflow:
 
 🎗 Remember, you can run the tests at any time with `npm run test`
 
-It is recommended that you start with a directory structure that looks like this:
+It was  recommended that,  start with a directory structure that looks like this:
 
 ```
 lib/           // classes and helper code
